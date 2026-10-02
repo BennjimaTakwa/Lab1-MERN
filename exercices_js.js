@@ -4,15 +4,15 @@ const products = [
   { name: 'Mouse', price: 25 }
 ];
 
-// 1. destructuring : on sort name et price du premier produit
+//  destructuring 
 const { name, price } = products[0];
 console.log(name, price);
 
-// 2. find : on cherche le produit qui s'appelle 'Mouse'
+//  find 
 const mouse = products.find(p => p.name === 'Mouse');
 console.log(mouse.price);
 
-// 3. filter : on garde les produits dont le prix est < 100
+//  filter 
 const cheap = products.filter(p => p.price < 100);
 console.log(cheap);
 

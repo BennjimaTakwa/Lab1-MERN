@@ -60,11 +60,6 @@ const users = [
   { id: 2, name: 'Karim', email: 'karim@example.com' },
   { id: 3, name: 'Sara', email: 'sara@example.com' }
 ];
-// users request 
-app.get('/api/users', (req, res) => {
-  res.json(users);
-});
-
 //  GET /api/users/:id 
 app.get('/api/users/:id', (req, res) => {
   const id = Number(req.params.id);     // convert the id from string to number      
@@ -82,9 +77,11 @@ app.post('/contact', (req, res) => {
   if (!email || !message) {
     return res.status(400).json({ error: 'Email and message are required' });
   }
-  res.status(200).json({ message: ' your message has been received' });
+  res.status(200).json({ message: 'Thank you, your message has been received' });
 });
 
+// GET /api/users          -> all users
+// GET /api/users?name=Aya -> only users named Aya (bonus)
 app.get('/api/users', (req, res) => {
   const { name } = req.query;
   let result = users;
